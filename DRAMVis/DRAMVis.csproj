@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{2BC7CEB6-EDCB-4459-B94A-76D8181725FB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DRAMVis</RootNamespace>
+    <AssemblyName>DRAMVis</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BarGrapher.cs" />
+    <Compile Include="DeviceParameters.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
+    <Compile Include="Grapher.cs" />
+    <Compile Include="IPlottable.cs" />
+    <Compile Include="LineGrapher.cs" />
+    <Compile Include="MyLinePlot.cs" />
+    <Compile Include="SystemParameters.cs" />
+    <Compile Include="VisFileContainer.cs" />
+    <Compile Include="VisFileReader.cs" />
+    <Compile Include="Visualizer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="open.png" />
+    <None Include="pan.png" />
+    <None Include="play.png" />
+    <None Include="playplus.png" />
+    <None Include="pointer.png" />
+    <None Include="reload.png" />
+    <None Include="save.png" />
+    <None Include="savegraph.png" />
+    <None Include="zoom.png" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NPlot">
+      <HintPath>..\packages\NPlot.0.9.10.0\lib\net20\NPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
